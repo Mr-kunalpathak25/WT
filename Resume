@@ -1,0 +1,123 @@
+HTML CODE 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal Pathak's Resume</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="profile">
+            <img src="kunalphoto.jpg" alt="Profile Picture">
+            <h1>Kunal Pathak</h1>
+            <p>Passionate Web Developer</p>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Contact Information</h2>
+            <ul>
+                <li><strong>Email:</strong> kunalpathak25012004@gmail.com</li>
+                <li><strong>Phone:</strong> +91 7972839585</li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kunal-pathak-0109a3269/" target="_blank">kunal-pathak-0109a3269</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/Mr-kunalpathak25" target="_blank">Mr-kunalpathak25</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Education</h2>
+            <ul>
+                <li>B.Tech in Computer Science Engineering - Sanjivani College of Engineering</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Java, Python, C, C++</li>
+                <li>Web Development, DSA</li>
+                <li>Database Management</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Projects</h2>
+            <ul>
+                <li>Placement Management System</li>
+                <li>Sanjivani's CIA Report Generator</li>
+                <li>Temperature Converter</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Kunal Pathak. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+CSS CODE 
+
+/* Reset */
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #96d4d5;
+    color: #000000;
+}
+
+header .profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+main section {
+    margin-bottom: 20px;
+}
+
+main section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #1fea00;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+
+JS. CODE
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Resume page is ready!");
+});
