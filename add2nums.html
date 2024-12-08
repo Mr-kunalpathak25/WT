@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calcultor</h1>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button type="button" onclick="calculate()">Calculate</button>
+    <h2 id="result"></h2>
+    
+    <script>
+        function calculate() 
+        {
+            let n1=parseFloat(document.getElementById("num1").value);
+            let n2=parseFloat(document.getElementById("num2").value);
+            let sum=n1+n2;
+            let result=document.getElementById("result").innerHTML=sum;
+        }
+
+    </script>
+</body>
+</html>

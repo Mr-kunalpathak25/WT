@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove from Dropdown List</title>
+</head>
+<body>
+    <h1>To Remove from Dropdown List</h1>
+    <select id="dropdown">
+        <option>Op1</option>
+        <option>Op2</option>
+        <option>Op3</option>
+        <option>Op4</option>
+    </select>
+    <button onclick="remove()">Remove</button>
+    <br><br><br>
+    <hr>
+    <hr><br><br><br><br>
+    <input type="text" id="name" placeholder="Enter Option to Add">
+    <button onclick="add()">Add</button>
+
+    <script>
+        function remove() 
+        {
+           let s=document.getElementById("dropdown");
+           if(s.selectedIndex !== -1)
+           {
+            s.remove(s.selectedIndex);
+           }
+           else{
+            alert("Select an option");
+           }
+        }
+        function add()
+        {
+            let s=document.getElementById("dropdown");
+            let name = document.getElementById("name").value;
+            let option = document.createElement("option");
+            option.text = name;
+            s.appendChild(option);
+            document.getElementById("name").value="";
+
+        }
+    </script>
+</body>
+</html>

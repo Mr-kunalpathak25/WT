@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runtime Character Counter</title>
+</head>
+<body>
+    <h1>Runtime Character Counter</h1>
+    <p>Enter text, and the counter will show the character count in real time:</p>
+    <input type="text" id="textInput" placeholder="Type something..." oninput="countCharacters()" />
+    <div id="counterDisplay">Count: 0</div>
+
+    <script>
+        function countCharacters() {
+            const inputText = document.getElementById('textInput').value;
+            const characterCount = inputText.length;
+            document.getElementById('counterDisplay').textContent = `Characters: ${characterCount}`;
+        }
+    </script>
+</body>
+</html>

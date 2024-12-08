@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Paragraph Color Change</h1>
+    <p id="p">Click on submit button to change the color of the paragraph.</p>
+    <button onclick="changeColor()">Submit</button> 
+    
+    <script>
+        function changeColor()
+        {
+            let para=document.getElementById("p");
+            para.style.backgroundColor="blue";
+        }
+    </script>
+</body>
+</html>
