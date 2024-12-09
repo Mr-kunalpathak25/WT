@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>To-Do List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="todoApp" ng-controller="todoCtrl">
+
+    <div>
+        <h2>To-Do List</h2>
+
+        <!-- Input field for adding or editing tasks -->
+        <input type="text" ng-model="taskInput" placeholder="Add a new task">
+        <button ng-click="addOrEditTask()">Add</button>
+
+        <!-- List of tasks -->
+        <ul>
+            <li ng-repeat="task in tasks">
+                <input type="checkbox" ng-model="task.completed">
+                <span ng-if="!task.isEditing">{{task.name}}</span>
+                <input ng-if="task.isEditing" type="text" ng-model="task.name">
+                <button ng-click="editTask($index)" ng-if="!task.isEditing">Edit</button>
+                <button ng-click="updateTask($index)" ng-if="task.isEditing">Update</button>
+                <button ng-click="removeTask($index)">Remove</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var app = angular.module('todoApp', []);
+        app.controller('todoCtrl', function($scope) {
+            $scope.tasks = [];
+            $scope.taskInput = '';  // Holds the task input value
+            $scope.editIndex = null; // Index for editing task
+
+            // Add a new task or edit an existing task
+            $scope.addOrEditTask = function() {
+                if ($scope.taskInput) {
+                    if ($scope.editIndex === null) {
+                        // Add new task
+                        $scope.tasks.push({ name: $scope.taskInput, completed: false, isEditing: false });
+                    } else {
+                        // Edit the existing task
+                        $scope.tasks[$scope.editIndex].name = $scope.taskInput;
+                        $scope.tasks[$scope.editIndex].isEditing = false;
+                    }
+                    $scope.taskInput = ''; // Clear the input field
+                    $scope.editIndex = null; // Reset edit index
+                }
+            };
+
+            // Mark a task for editing
+            $scope.editTask = function(index) {
+                $scope.tasks[index].isEditing = true;
+                $scope.taskInput = $scope.tasks[index].name;
+                $scope.editIndex = index;
+            };
+
+            // Update the task after editing
+            $scope.updateTask = function(index) {
+                $scope.tasks[index].isEditing = false;
+                $scope.taskInput = ''; // Clear the input field after update
+                $scope.editIndex = null; // Reset edit index
+            };
+
+            // Remove a task
+            $scope.removeTask = function(index) {
+                $scope.tasks.splice(index, 1);
+            };
+        });
+    </script>
+
+</body>
+</html>
